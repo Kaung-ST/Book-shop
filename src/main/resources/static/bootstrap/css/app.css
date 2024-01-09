@@ -48,3 +48,6 @@ body{
 #showcase #book{
     border-radius: 13px;
 }
+#quotes i{
+    opacity: 0.3;
+}
