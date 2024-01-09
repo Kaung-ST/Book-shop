@@ -120,6 +120,7 @@ public class BookShopApplication {
 //            publisher2.addBook(book4);
 //            publisher2.addBook(book5);
 //            publisher2.addBook(book6);
+
         Genre gen1=genreDao.save(genre1);
 
         Genre gen2=genreDao.save(genre2);
@@ -131,8 +132,8 @@ public class BookShopApplication {
             book5.addGenres(gen2);
             book6.addGenres(gen2);
 
-        authorDao.save(author1);
-        authorDao.save(author2);
+            authorDao.save(author1);
+            authorDao.save(author2);
 
 
         };
