@@ -25,7 +25,7 @@ public class BookShopApplication {
     private final GenreDao genreDao;
     private final PublisherDao publisherDao;
 
-    @Bean
+    @Bean @Profile("dev")
     @Transactional
     public ApplicationRunner runner(){
         return  r->{
