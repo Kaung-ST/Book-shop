@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+
+  <div class="container-fluid p-4 mt-5">
+    <div class="row my-3">
+      <div class="col-md-10"></div>
+      <div class="col-md-2 ">
+        <a th:href="@{'/cart/view-cart'}" style="text-decoration: none; color: #fd7e14">
+        <h3><i class="fas fa-cart-plus me-2 d-inline"></i> <span class="btn-outline-primary" th:text="${cartSize}"></span></h3>
+        </a>
+      </div>
+    </div>
+    <div class="container mt-2 mb-5">
+      <div class="row">
+        <div class="col-md-6 p-5">
+          <img th:src="${book.imgUrl}" class="img-fluid rounded-2 shadow" alt="">
+        </div>
+        <div class="col-md-6 p-5 rounded-2 shadow">
+          <h4 class="text-muted lead" th:text="${book.title}"></h4>
+          <p class="text-muted lead" th:text="${'-by '+ book.author.authorName}"></p>
+          <p class="lead" style="font-size: medium"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequuntur deleniti molestias quas ullam. Aliquid inventore magnam nihil repellendus totam. </p>
+          <p class="lead"> Price :
+            <span th:text="${'$'+book.getPrice()}" style="color: #fd7e14"></span>
+          </p>
+          <p class="lead">Publisher :
+            <span th:text="${book.getPublisher().name}"></span>
+          </p>
+          <div class="my-3">
+            <a th:href="@{'/cart/add-cart?id='+${book.id}+'&isbn='+${book.isbn}+'&page=details'}" class="btn btn-primary"> <i class="fas fa-cart-plus me-2 d-inline"></i>Add Cart</a>
+            <a th:href="@{'/book/list-books'}" class="btn btn-outline-primary">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

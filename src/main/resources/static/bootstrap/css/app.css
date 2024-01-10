@@ -2,6 +2,9 @@ body{
     font-family: 'Raleway',sans-serif;
 
 }
+.nav{
+    opacity: 0.3;
+}
 .navbar{
     font-weight: 300;
     position: absolute;
