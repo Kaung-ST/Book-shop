@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -15,7 +17,9 @@ private int id;
 private String isbn;
 private String title;
 private  double price;
-private  int quantity;
+private  int quantity=1;
+
+private List<Integer>cartItemQuantity=new ArrayList<>();
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,4 +33,15 @@ private  int quantity;
         return Objects.hash(id, isbn);
     }
 
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
+
